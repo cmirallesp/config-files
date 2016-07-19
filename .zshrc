@@ -116,8 +116,9 @@ export POSTGRES_IP=${${DOCKER_HOST#tcp://}%:2376}
 
 ## HOOGLE
 HOOGLE=/Users/carles/.local/bin
-export PATH=/Library/Frameworks/Python.framework/Versions/3.4/bin:/opt/local/bin:/opt/local/sbin:/Users/carles/.rvm/gems/ruby-2.1.1/bin:/Users/carles/.rvm/gems/ruby-2.1.1@global/bin:/Users/carles/.rvm/rubies/ruby-2.1.1/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/local/smlnj/bin:/Users/carles/.rvm/bin:/usr/local/mysql/bin:/usr/local/mysql/bin::/Users/carles/.local/bin
+export PATH=$PATH:/Users/carles/.local/bin
 
 ## STACK ALIAS
 alias se='stack exec --'
 alias sb='stack build'
+
