@@ -117,6 +117,7 @@ export POSTGRES_IP=${${DOCKER_HOST#tcp://}%:2376}
 ## HOOGLE
 HOOGLE=/Users/carles/.local/bin
 export PATH=$PATH:/Users/carles/.local/bin
+alias ho=hoogle
 
 ## STACK ALIAS
 alias se='stack exec --'
