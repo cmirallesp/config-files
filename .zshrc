@@ -112,7 +112,7 @@ export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$DYLD_LIBRARY_PATH"
 ## DOCKER
 # export default docker env variables for default machine
 eval $(docker-machine env default)
-export POSTGRES_IP=${${DOCKER_HOST#tcp://}%:2376}
+export PG_HOST=${${DOCKER_HOST#tcp://}%:2376}
 
 ## HOOGLE
 HOOGLE=/Users/carles/.local/bin
