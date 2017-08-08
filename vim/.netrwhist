@@ -1,8 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/Users/carles/.vim/bundle/todo.txt-vim/ftdetect'
-let g:netrw_dirhist_2='/Users/carles'
-let g:netrw_dirhist_3='/Users/carles/.vim/bundle/vim-task'
-let g:netrw_dirhist_4='/Volumes/500GB/dev/servant-persistent'
-let g:netrw_dirhist_5='/Volumes/500GB/dev/servant-persistent/src'
-let g:netrw_dirhist_6='/Volumes/500GB/dev/servant-persistent/src/Api'
