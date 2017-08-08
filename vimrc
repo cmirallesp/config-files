@@ -23,9 +23,10 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'vim-task'
+Plugin 'cmirallesp/vim-task'
 Plugin 'Solarized'
 Plugin 'vimwiki'
+Plugin 'JamshedVesuna/vim-markdown-preview'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -51,8 +52,15 @@ noremap - :s/\/\///<CR>
 nnoremap gb :ls<CR>:b<Space>
 
 " tags navigation
-nnoremap <F2> <C-]>
-nnoremap <F3> <C-O>
+nnoremap <TAB> <C-]>
+nnoremap <S-TAB> <C-O>
 
 map <F4> :execute " grep -srnw --binary-files=without-match --exclude-dir=.git . -e " . expand("<cword>") . " " <bar> cwindow<CR>
 
+" vimwiki with markdown support
+let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
+" helppage -> :h vimwiki-syntax 
+
+" vim-instant-markdown - Instant Markdown previews from Vim
+" https://github.com/suan/vim-instant-markdown
+let g:instant_markdown_autostart = 0	" disable autostart
