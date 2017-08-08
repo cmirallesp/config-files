@@ -10,6 +10,11 @@ set tabstop=2
 set shiftwidth=2
 set noexpandtab
 set termguicolors
+" search
+set incsearch
+set hlsearch
+nnoremap <CR> :nohlsearch<CR><CR>
+
 colorscheme solarized
 " allow find commmand go recursively
 set path +=**
@@ -60,6 +65,3 @@ map <F4> :execute " grep -srnw --binary-files=without-match --exclude-dir=.git .
 " vimwiki with markdown support
 let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
 " helppage -> :h vimwiki-syntax 
-
-" vim-instant-markdown - Instant Markdown previews from Vim
-" https://github.com/suan/vim-instant-markdown
