@@ -31,12 +31,13 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'cmirallesp/vim-task'
 Plugin 'Solarized'
 Plugin 'JamshedVesuna/vim-markdown-preview'
+"command line
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'Valloric/YouCompleteMe'
-"Plugin 'lervag/vimtex'
+" latex-box (lighter than latex-vim)
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
-" Track the engine.
+
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
@@ -47,7 +48,6 @@ filetype plugin indent on    " required
 let g:UltiSnipsExpandTrigger="<F3>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
@@ -73,7 +73,7 @@ vnoremap < <gv
 nnoremap gb :ls<CR>:b<Space>
 
 " tags navigation
-nnoremap <C-P> <C-]>
+nnoremap <C-+> <C-]>
 
 map <F4> :execute " grep -srnw --binary-files=without-match --exclude-dir=.git . -e " . expand("<cword>") . " " <bar> cwindow<CR>
 
