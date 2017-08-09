@@ -34,7 +34,8 @@ Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Valloric/YouCompleteMe'
-"Plugin 'vim-latex/vim-latex'
+"Plugin 'lervag/vimtex'
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
 " Track the engine.
 Plugin 'SirVer/ultisnips'
 " Snippets are separated from the engine. Add this if you want them:
@@ -73,7 +74,6 @@ nnoremap gb :ls<CR>:b<Space>
 
 " tags navigation
 nnoremap <C-P> <C-]>
-"nnoremap <right> <C-O>
 
 map <F4> :execute " grep -srnw --binary-files=without-match --exclude-dir=.git . -e " . expand("<cword>") . " " <bar> cwindow<CR>
 
