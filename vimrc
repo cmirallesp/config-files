@@ -33,9 +33,11 @@ Plugin 'Solarized'
 Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'vim-latex/vim-latex'
 call vundle#end()            " required
 filetype plugin indent on    " required
 "*************Airline powerline**************
+let g:airline_theme='minimalist'
 let g:airline#extensions#tabline#enabled = 1
 
 "******* FILE BROWSING****************************
