@@ -13,7 +13,7 @@ set termguicolors
 " search
 set incsearch
 set hlsearch
-nnoremap <CR> :nohlsearch<CR><CR>
+nnoremap <ESC> :nohlsearch<CR>
 
 colorscheme solarized
 " allow find commmand go recursively
@@ -30,7 +30,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'cmirallesp/vim-task'
 Plugin 'Solarized'
-Plugin 'vimwiki'
 Plugin 'JamshedVesuna/vim-markdown-preview'
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -49,19 +48,12 @@ let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 vnoremap > >gv
 vnoremap < <gv
 
-" comment/uncomment
-noremap + :s/^/\/\//<CR>
-noremap - :s/\/\///<CR>
-
 " go to buffer
 nnoremap gb :ls<CR>:b<Space>
 
 " tags navigation
-nnoremap <TAB> <C-]>
-nnoremap <S-TAB> <C-O>
+nnoremap <left> <C-]>
+nnoremap <right> <C-O>
 
 map <F4> :execute " grep -srnw --binary-files=without-match --exclude-dir=.git . -e " . expand("<cword>") . " " <bar> cwindow<CR>
 
-" vimwiki with markdown support
-let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
-" helppage -> :h vimwiki-syntax 
