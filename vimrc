@@ -13,6 +13,7 @@ set termguicolors
 " search
 set incsearch
 set hlsearch
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 "nnoremap <CR> :nohlsearch<CR>
 
 colorscheme solarized
