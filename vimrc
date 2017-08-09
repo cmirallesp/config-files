@@ -13,7 +13,7 @@ set termguicolors
 " search
 set incsearch
 set hlsearch
-nnoremap <ESC> :nohlsearch<CR>
+nnoremap <CR> :nohlsearch<CR>
 
 colorscheme solarized
 " allow find commmand go recursively
@@ -31,8 +31,12 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'cmirallesp/vim-task'
 Plugin 'Solarized'
 Plugin 'JamshedVesuna/vim-markdown-preview'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 call vundle#end()            " required
 filetype plugin indent on    " required
+"*************Airline powerline**************
+let g:airline#extensions#tabline#enabled = 1
 
 "******* FILE BROWSING****************************
 " Tweaks for browsing
