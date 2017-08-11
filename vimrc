@@ -20,7 +20,7 @@ colorscheme solarized
 " allow find commmand go recursively
 set path +=**
 
-" set the runtime path to include Vundle and initialize
+" set the run time path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
@@ -75,6 +75,19 @@ nnoremap gb :ls<CR>:b<Space>
 
 " tags navigation
 nnoremap <C-+> <C-]>
+inoremap <C-s> <ESC>:w<CR> 
 
 map <F4> :execute " grep -srnw --binary-files=without-match --exclude-dir=.git . -e " . expand("<cword>") . " " <bar> cwindow<CR>
+let g:LatexBox_latexmk_options = "-pdflatex='pdflatex -synctex=1 \%O \%S'"
 
+"*********SPELL*****************
+setlocal spelllang=en_us
+set spell
+" next/prev error
+nmap as ]s
+nmap sa [s
+" suggestions
+nmap ss z=
+nmap 1s 1z=
+" add ass good word into personal dictionary
+nmap sd zG
