@@ -16,7 +16,7 @@ set hlsearch
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 "nnoremap <CR> :nohlsearch<CR>
 
-colorscheme solarized
+
 " allow find commmand go recursively
 set path +=**
 
@@ -32,6 +32,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'cmirallesp/vim-task'
 Plugin 'Solarized'
 Plugin 'JamshedVesuna/vim-markdown-preview'
+Plugin 'mzlogin/vim-markdown-toc'
 "command line
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -43,8 +44,13 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
+"Git plugin
+Plugin 'tpope/vim-fugitive'
+"Front-end to ack searcher
+Plugin 'mileszs/ack.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
+colorscheme solarized
 "*************SNIPETS***********************
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<F3>"
@@ -104,3 +110,4 @@ nmap 1s 1z=
 " add ass good word into personal dictionary
 nmap sd zG
 
+let g:tex_flavor='latex'
