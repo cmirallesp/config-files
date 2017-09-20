@@ -10,6 +10,7 @@ set tabstop=2
 set shiftwidth=2
 set noexpandtab
 set termguicolors
+set background=dark
 " search
 set incsearch
 set hlsearch
@@ -30,7 +31,6 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'cmirallesp/vim-task'
-Plugin 'Solarized'
 Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'mzlogin/vim-markdown-toc'
 "command line
@@ -40,7 +40,10 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
 " autocomplete & snipets
 Plugin 'Valloric/YouCompleteMe'
-"Plugin 'Shougo/neocomplete'
+"Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Activate deoplete by default
+"Plugin 'Shougo/neosnippet'
+"Plugin 'Shougo/neosnippet-snippets'
 Plugin 'SirVer/ultisnips'
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
@@ -49,8 +52,9 @@ Plugin 'tpope/vim-fugitive'
 "Front-end to ack searcher
 Plugin 'mileszs/ack.vim'
 call vundle#end()            " required
+
 filetype plugin indent on    " required
-colorscheme solarized
+colorscheme NeoSolarized
 "*************SNIPETS***********************
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<F3>"
@@ -66,7 +70,6 @@ let g:airline#extensions#tabline#enabled = 1
 "******* FILE BROWSING****************************
 " Default to tree mode
 let g:netrw_liststyle = 3
-
 " Tweaks for browsing
 let g:netrw_banner=0        " disable annoying banner
 let g:netrw_browse_split=0  " open in prior window
@@ -111,3 +114,5 @@ nmap 1s 1z=
 nmap sd zG
 
 let g:tex_flavor='latex'
+let g:ycm_path_to_python_interpreter = '/Users/carles/.pyenv/shims/python'
+
