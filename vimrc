@@ -115,4 +115,3 @@ nmap sd zG
 
 let g:tex_flavor='latex'
 let g:ycm_path_to_python_interpreter = '/Users/carles/.pyenv/shims/python'
-
