@@ -54,7 +54,7 @@ Plugin 'mileszs/ack.vim'
 call vundle#end()            " required
 
 filetype plugin indent on    " required
-colorscheme NeoSolarized
+"colorscheme NeoSolarized
 "*************SNIPETS***********************
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<F3>"

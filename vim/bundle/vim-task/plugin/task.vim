@@ -19,8 +19,8 @@ function! Toggle_task_status()
   call setline('.', line)
 endfunction
 
-inoremap <silent> <buffer> <F2> <ESC>:call Toggle_task_status()<CR>i
-noremap <silent> <buffer> <F2> :call Toggle_task_status()<CR>
+inoremap <silent> <buffer> <C-D-CR> <ESC>:call Toggle_task_status()<CR>i
+noremap <silent> <buffer> <C-D-CR> :call Toggle_task_status()<CR>
 
 " Boilerplate
 let &cpo = s:cpo_save
