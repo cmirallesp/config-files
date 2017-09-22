@@ -55,8 +55,7 @@ alias envconfig="subl ~/Projects/config/env.sh"
 plugins=(git colored-man colorize github virtualenv pip python brew osx zsh-syntax-highlighting)
 
 # User configuration
-
-export PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:/opt/local/bin:/opt/local/sbin:/Users/carles/.rvm/gems/ruby-2.1.1/bin:/Users/carles/.rvm/gems/ruby-2.1.1@global/bin:/Users/carles/.rvm/rubies/ruby-2.1.1/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/local/smlnj/bin:/Users/carles/.rvm/bin:/usr/local/mysql/bin"
+export PATH="/opt/local/bin:/opt/local/sbin:/Users/carles/.rvm/gems/ruby-2.1.1/bin:/Users/carles/.rvm/gems/ruby-2.1.1@global/bin:/Users/carles/.rvm/rubies/ruby-2.1.1/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/local/smlnj/bin:/Users/carles/.rvm/bin:/usr/local/mysql/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -126,7 +125,6 @@ if [ -f '/usr/local/google-cloud-sdk/path.zsh.inc' ]; then source '/usr/local/go
 # The next line enables shell command completion for gcloud.
 if [ -f '/usr/local/google-cloud-sdk/completion.zsh.inc' ]; then source '/usr/local/google-cloud-sdk/completion.zsh.inc'; fi
 export PATH="/usr/local/bin:$PATH"
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 ## fpath is a path for functions. this add zsh completions
