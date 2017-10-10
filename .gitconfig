@@ -1,0 +1,24 @@
+[user]
+	name = Carles
+	mail = cmirallesp@gmail.com
+	email = cmirallesp@gmail.com
+[core]
+	excludesfile = /Users/carles/.gitignore_global
+	editor = /usr/bin/vim
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[github]
+	user = cmirallesp
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	lo = log --all --oneline --graph --decorate --abbrev-commit
+	unstage = reset HEAD --
+[push]
+	default = simple
