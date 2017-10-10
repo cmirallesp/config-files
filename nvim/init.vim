@@ -39,6 +39,7 @@ Plug 'Shougo/neosnippet-snippets'
 "Plug 'honza/vim-snippets'
 Plug 'tpope/vim-fugitive' "Git plugin
 Plug 'mileszs/ack.vim' "Front-end to ack searcher
+Plug 'scrooloose/nerdcommenter'
 call plug#end()
 
 let g:deoplete#enable_at_startup=1
