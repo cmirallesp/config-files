@@ -40,6 +40,7 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'tpope/vim-fugitive' "Git plugin
 Plug 'mileszs/ack.vim' "Front-end to ack searcher
 Plug 'scrooloose/nerdcommenter'
+Plug 'sbdchd/neoformat' " format files
 call plug#end()
 
 let g:deoplete#enable_at_startup=1
@@ -76,5 +77,11 @@ nmap ss z=
 nmap 1s 1z=
 " add ass good word into personal dictionary
 nmap sd zG
-
+" remove trailing spaces on save
+autocmd BufWritePre *.py :%s/\s\+$//e
+" run Neoformat on save
+augroup fmt
+  autocmd!
+  autocmd BufWritePre * undojoin | Neoformat
+augroup END
 
