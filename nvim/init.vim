@@ -43,6 +43,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'sbdchd/neoformat' " format files
 " pyton autocompletion (jedi)
 Plug 'zchee/deoplete-jedi'
+" js autocompletion (tern)
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'vim-pandoc/vim-pandoc-syntax'
 call plug#end()
 
