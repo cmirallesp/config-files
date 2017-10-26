@@ -1,7 +1,7 @@
 " PYTHON
 " uncomment next line if you use python2
-"let g:python_host_prog = '/usr/local/bin/python'
-let g:python3_host_prog = '/Users/carles/.pyenv/shims/python'
+let g:python_host_prog = '/Users/carles/.pyenv/versions/2.7/bin/python'
+let g:python3_host_prog = '/Users/carles/.pyenv/versions/3.6.2/bin/python'
 "set runtimepath+=~/.config/nvim/plugins/deoplete.nvim
 set runtimepath+=~/.vim,~/.vim/after
 set packpath+=~/.vim
@@ -41,6 +41,9 @@ Plug 'tpope/vim-fugitive' "Git plugin
 Plug 'mileszs/ack.vim' "Front-end to ack searcher
 Plug 'scrooloose/nerdcommenter'
 Plug 'sbdchd/neoformat' " format files
+" pyton autocompletion (jedi)
+Plug 'zchee/deoplete-jedi'
+Plug 'vim-pandoc/vim-pandoc-syntax'
 call plug#end()
 
 let g:deoplete#enable_at_startup=1
@@ -66,6 +69,9 @@ inoremap <C-s> <ESC>:w<CR>
 
 map <F4> :execute " grep -srnw --binary-files=without-match --exclude-dir=.git . -e " . expand("<cword>") . " " <bar> cwindow<CR>
 
+" terminal map escape
+:tnoremap <Esc> <C-\><C-n>
+
 "*********SPELL*****************
 setlocal spelllang=en_us
 set spell
@@ -81,7 +87,9 @@ nmap sd zG
 autocmd BufWritePre *.py :%s/\s\+$//e
 " run Neoformat on save
 augroup fmt
-  autocmd!
-  autocmd BufWritePre * undojoin | Neoformat
+	autocmd!
+	autocmd BufWritePre * undojoin | Neoformat
 augroup END
 
+autocmd FileType python nnoremap <leader>y :0,$!yapf<Cr>
+"autocmd CompleteDone * pclose " To close preview window of deoplete aut
