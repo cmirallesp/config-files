@@ -134,3 +134,5 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 alias vim='nvim'
+# fuzzy finder
+export FZF_DEFAULT_COMMAND='rg --files --hidden --smartcase --glob "!.git/*"'

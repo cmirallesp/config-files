@@ -46,6 +46,10 @@ Plug 'zchee/deoplete-jedi'
 " js autocompletion (tern)
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'terryma/vim-multiple-cursors'
+" open fuzzy files
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 let g:deoplete#enable_at_startup=1
@@ -74,6 +78,8 @@ map <F4> :execute " grep -srnw --binary-files=without-match --exclude-dir=.git .
 " terminal map escape
 :tnoremap <Esc> <C-\><C-n>
 
+" open with fuzzy finder
+nnoremap <leader>o :FZF<cr>
 "*********SPELL*****************
 setlocal spelllang=en_us
 set spell
@@ -94,4 +100,6 @@ augroup fmt
 augroup END
 
 autocmd FileType python nnoremap <leader>y :0,$!yapf<Cr>
+" open file browser
+nnoremap bb :e .<CR>
 "autocmd CompleteDone * pclose " To close preview window of deoplete aut
