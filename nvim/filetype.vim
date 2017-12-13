@@ -3,6 +3,8 @@ autocmd BufNewFile,BufRead *.es6 setfiletype javascript
 "Pandoc syntax
 augroup pandoc_syntax
 	au! BufNewFile,BufFilePre,BufRead *.scholmd setfiletype markdown.pandoc
+	noremap \p :!scholdoc % -t latex -o %:r.pdf <CR>
+	noremap \o :!open %:r.pdf <CR>
 augroup END
 
 augroup task

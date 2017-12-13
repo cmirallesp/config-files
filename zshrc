@@ -135,4 +135,6 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 alias vim='nvim'
 # fuzzy finder
-# export FZF_DEFAULT_COMMAND='rg --files --hidden --smartcase --glob "!.git/*"'
+#export FZF_DEFAULT_COMMAND='rg --files --hidden --smartcase --glob "!.git/*"'
+export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
+export FZF_COMPLETION_TRIGGER='//'
