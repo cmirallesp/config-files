@@ -52,7 +52,8 @@ ZSH_THEME="pygmalion"
 #plugins=(git rails ruby taskwarrior)
 alias zshconfig="subl ~/.zshrc"
 alias envconfig="subl ~/Projects/config/env.sh"
-plugins=(git colored-man colorize github virtualenv pip python brew osx zsh-syntax-highlighting)
+#plugins=(git colored-man colorize github virtualenv pip python brew osx zsh-syntax-highlighting plugins elixir)
+plugins=(git colored-man colorize github virtualenv pip python brew osx zsh-syntax-highlighting plugins)
 
 # User configuration
 export PATH="/opt/local/bin:/opt/local/sbin:/Users/carles/.rvm/gems/ruby-2.1.1/bin:/Users/carles/.rvm/gems/ruby-2.1.1@global/bin:/Users/carles/.rvm/rubies/ruby-2.1.1/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/local/smlnj/bin:/Users/carles/.rvm/bin:/usr/local/mysql/bin"
@@ -89,18 +90,18 @@ alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall F
 alias pg_start='postgres -D /usr/local/var/postgres'
 
 ## SPRING
-alias s="spring"
-alias rc="s rails c"
-alias rs="s rails s"
-alias rk="s rake"
-alias dbstatus="rake db:migrate:status"
+#alias s="spring"
+#alias rc="s rails c"
+#alias rs="s rails s"
+#alias rk="s rake"
+#alias dbstatus="rake db:migrate:status"
 
-alias restore_latest_dump_local="pg_restore --verbose --clean --no-acl --no-owner -h localhost -d nc_development latest.dump"
-alias prepare_test='RAILS_ENV=test db:drop db:create db:test:prepare'
-alias push_staging='git push staging +`git rev-parse --abbrev-ref HEAD`:master'
+#alias restore_latest_dump_local="pg_restore --verbose --clean --no-acl --no-owner -h localhost -d nc_development latest.dump"
+#alias prepare_test='RAILS_ENV=test db:drop db:create db:test:prepare'
+#alias push_staging='git push staging +`git rev-parse --abbrev-ref HEAD`:master'
 #alias copy_production_to_staging="heroku pg:backups restore `heroku pg:backups public-url -a novicap` DATABASE_URL -a novicap-staging"
-alias build_assets="rake assets:clean tmp:clear assets:precompile assets:sync"
-alias assets_sync="rake assets:sync" #TO S3
+#alias build_assets="rake assets:clean tmp:clear assets:precompile assets:sync"
+#alias assets_sync="rake assets:sync" #TO S3
 
 ## MYSQL
 MYSQL=/usr/local/mysql/bin
@@ -138,3 +139,10 @@ alias vim='nvim'
 #export FZF_DEFAULT_COMMAND='rg --files --hidden --smartcase --glob "!.git/*"'
 export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
 export FZF_COMPLETION_TRIGGER='//'
+
+export MYVIMRC='.config/nvim/init.vim'
+
+## GO
+export GOPATH=$HOME/dev/go
+export PATH=$PATH:/usr/local/go/bin
+eval "$(rbenv init -)"
