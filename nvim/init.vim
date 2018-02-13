@@ -3,9 +3,14 @@
 let g:python_host_prog = '/Users/carles/.pyenv/versions/2.7/bin/python'
 let g:python3_host_prog = '/Users/carles/.pyenv/versions/3.6.2/bin/python'
 "set runtimepath+=~/.config/nvim/plugins/deoplete.nvim
+let mapleader=","
 set runtimepath+=~/.vim,~/.vim/after
 set packpath+=~/.vim
 set number
+
+" change buffer without saving
+set hidden
+
 " Global settings for all files (but may be overridden in ftplugin).
 set tabstop=2
 set shiftwidth=2
@@ -14,12 +19,16 @@ set termguicolors "True colors
 set background=dark
 colorscheme NeoSolarized
 
+" Quickly edit/reload the vimrc file
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>rv :so $MYVIMRC<CR>
 " search
 "set incsearch
 "set hlsearch
 
 " allow find commmand go recursively
 set path +=**
+set shell=/usr/local/bin/zsh
 "plugins
 call plug#begin('~/.vim/plugged')
 Plug 'cmirallesp/vim-task'
@@ -45,20 +54,22 @@ Plug 'sbdchd/neoformat' " format files
 Plug 'zchee/deoplete-jedi'
 " js autocompletion (tern)
 " javascript
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-Plug 'marijnh/tern_for_vim'
-Plug 'othree/jspc.vim'
-Plug 'flowtype/vim-flow'
+"Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+"Plug 'marijnh/tern_for_vim'
+"Plug 'othree/jspc.vim'
+"Plug 'flowtype/vim-flow'
 
 " ....
 Plug 'vim-pandoc/vim-pandoc-syntax'
-"Plug 'terryma/vim-multiple-cursors'
 Plug 'neomake/neomake'
 " open fuzzy files
 Plug '/usr/local/opt/fzf'
 "Plug 'junegunn/fzf.vim'
-Plug 'rizzatti/dash.vim'
+"Plug 'rizzatti/dash.vim'
 Plug 'junegunn/vim-easy-align'
+Plug	'elmcast/elm-vim'
+Plug 'tpope/vim-rails'
+Plug  'Blackrush/vim-gocode'
 call plug#end()
 
 let g:deoplete#enable_at_startup=1
@@ -83,6 +94,7 @@ nnoremap <C-+> <C-]>
 inoremap <C-s> <ESC>:w<CR>
 
 map <F4> :execute " grep -srnw --binary-files=without-match --exclude-dir=.git . -e " . expand("<cword>") . " " <bar> cwindow<CR>
+let g:ackprg = 'ag --vimgrep'
 
 " terminal map escape
 :tnoremap <Esc> <C-\><C-n>
@@ -129,7 +141,6 @@ endif
 if !empty(g:neomake_javascript_enabled_makers)
 	autocmd! BufWritePost * Neomake
 endif
-
 """""""""""""""""
 " Tern settings
 """""""""""""""""
@@ -148,6 +159,4 @@ let g:tern_request_timeout = 1
 let g:tern_request_timeout = 6000
 let g:tern#command = ["tern"]
 let g:tern#arguments = ["--persistent"]
-" markdown table format
-au FileType markdown vmap <leader><Bslash> :EasyAlign*<Bar><Enter>
-au FileType markdown.pandoc vmap <leader><Bslash> :EasyAlign*<Bar><Enter>
+
