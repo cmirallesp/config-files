@@ -47,11 +47,11 @@ Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 "Plug 'honza/vim-snippets'
 Plug 'tpope/vim-fugitive' "Git plugin
-Plug 'mileszs/ack.vim' "Front-end to ack searcher
+"Plug 'mileszs/ack.vim' "Front-end to ack searcher
+Plug 'epmatsw/ag.vim' "silver searcher
 Plug 'scrooloose/nerdcommenter'
 Plug 'sbdchd/neoformat' " format files
-" pyton autocompletion (jedi)
-Plug 'zchee/deoplete-jedi'
+Plug 'zchee/deoplete-jedi' " pyton autocompletion (jedi)
 " js autocompletion (tern)
 " javascript
 "Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
@@ -64,12 +64,11 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'neomake/neomake'
 " open fuzzy files
 Plug '/usr/local/opt/fzf'
-"Plug 'junegunn/fzf.vim'
-"Plug 'rizzatti/dash.vim'
 Plug 'junegunn/vim-easy-align'
 Plug	'elmcast/elm-vim'
 Plug 'tpope/vim-rails'
-Plug  'Blackrush/vim-gocode'
+Plug 'fatih/vim-go'
+Plug 'vim-ctrlspace/vim-ctrlspace'
 call plug#end()
 
 let g:deoplete#enable_at_startup=1
@@ -115,48 +114,11 @@ nmap sd zG
 
 " open file browser
 nnoremap ,, :e .<CR>
+
+" copy paste through pbcopy
+map <C-c> :.w !pbcopy<CR><CR>
+map <C-v> :r !pbpaste<CR>
+map <space> :CtrlSpace<CR>
 "
 "
-"
-"**************FLOW-QUICKFIX
-function! StrTrim(txt)
-	return substitute(a:txt, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
-endfunction
-
-let g:neomake_javascript_enabled_makers = ['flow']
-
-let g:flow_path = StrTrim(system('PATH=$(npm bin):$PATH && which flow'))
-
-if g:flow_path != 'flow not found'
-	let g:neomake_javascript_flow_maker = {
-				\ 'exe': 'sh',
-				\ 'args': ['-c', g:flow_path.' --json 2> /dev/null | flow-vim-quickfix'],
-				\ 'errorformat': '%E%f:%l:%c\,%n: %m',
-				\ 'cwd': '%:p:h'
-				\ }
-	let g:neomake_javascript_enabled_makers = g:neomake_javascript_enabled_makers + [ 'flow']
-endif
-
-" This is kinda useful to prevent Neomake from unnecessary runs
-if !empty(g:neomake_javascript_enabled_makers)
-	autocmd! BufWritePost * Neomake
-endif
-"""""""""""""""""
-" Tern settings
-"""""""""""""""""
-let g:tern_show_argument_hints='on_hold'
-let g:tern_map_keys=1
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_ignore_case = 1
-let g:deoplete#enable_smart_case = 1
-let g:deoplete#enable_camel_case = 1
-let g:deoplete#enable_refresh_always = 1
-let g:deoplete#max_abbr_width = 0
-let g:deoplete#max_menu_width = 0
-let g:deoplete#omni#input_patterns = get(g:,'deoplete#omni#input_patterns',{})
-
-let g:tern_request_timeout = 1
-let g:tern_request_timeout = 6000
-let g:tern#command = ["tern"]
-let g:tern#arguments = ["--persistent"]
 

@@ -25,3 +25,10 @@ augroup END
 au FileType markdown vmap <leader><Bslash> :EasyAlign*<Bar><Enter>
 au FileType markdown.pandoc vmap <leader><Bslash> :EasyAlign*<Bar><Enter>
 
+augroup go
+	autocmd!
+	autocmd FileType go nmap <leader>b :GoBuild<enter>
+	autocmd FileType go nmap <leader>r :GoRun<enter>
+	autocmd FileType go nmap <leader>t :GoTest<enter>
+	let g:go_term_mode = "split"
+augroup END
