@@ -53,7 +53,7 @@ ZSH_THEME="pygmalion"
 alias zshconfig="subl ~/.zshrc"
 alias envconfig="subl ~/Projects/config/env.sh"
 #plugins=(git colored-man colorize github virtualenv pip python brew osx zsh-syntax-highlighting plugins elixir)
-plugins=(git colored-man colorize github virtualenv pip python brew osx zsh-syntax-highlighting plugins)
+plugins=(git colored-man colorize github virtualenv pip python brew osx zsh-syntax-highlighting plugins rails)
 
 # User configuration
 export PATH="/opt/local/bin:/opt/local/sbin:/Users/carles/.rvm/gems/ruby-2.1.1/bin:/Users/carles/.rvm/gems/ruby-2.1.1@global/bin:/Users/carles/.rvm/rubies/ruby-2.1.1/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/local/smlnj/bin:/Users/carles/.rvm/bin:/usr/local/mysql/bin"
@@ -87,7 +87,6 @@ alias zshconfig="subl ~/.zshrc"
 alias ohmyzsh="subl ~/.oh-my-zsh"
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
-alias pg_start='postgres -D /usr/local/var/postgres'
 
 ## SPRING
 #alias s="spring"
@@ -143,6 +142,16 @@ export FZF_COMPLETION_TRIGGER='//'
 export MYVIMRC='.config/nvim/init.vim'
 
 ## GO
-export GOPATH=$HOME/dev/go
+#export GOPATH=/Volumes/500GB/dev/go
+export GOPATH=/Users/carles/dev/go
 export PATH=$PATH:/usr/local/go/bin
 eval "$(rbenv init -)"
+
+## AMBER
+alias adc='amber database create'
+alias add='amber database drop'
+alias adm='amber database migrate'
+alias ads='amber database status'
+alias adr='amber database rollback'
+
+export TERM="xterm-256color"
