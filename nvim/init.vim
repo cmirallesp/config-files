@@ -6,7 +6,7 @@ let g:python3_host_prog = '/Users/carles/.pyenv/versions/3.6.2/bin/python'
 let mapleader=","
 set runtimepath+=~/.vim,~/.vim/after
 set packpath+=~/.vim
-set number
+set number relativenumber
 
 " change buffer without saving
 set hidden
@@ -47,8 +47,8 @@ Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 "Plug 'honza/vim-snippets'
 Plug 'tpope/vim-fugitive' "Git plugin
-"Plug 'mileszs/ack.vim' "Front-end to ack searcher
-Plug 'epmatsw/ag.vim' "silver searcher
+"Plug 'epmatsw/ag.vim' "silver searcher (deprecated)
+Plug 'mileszs/ack.vim' " using ag
 Plug 'scrooloose/nerdcommenter'
 Plug 'sbdchd/neoformat' " format files
 Plug 'zchee/deoplete-jedi' " pyton autocompletion (jedi)
@@ -68,7 +68,9 @@ Plug 'junegunn/vim-easy-align'
 Plug	'elmcast/elm-vim'
 Plug 'tpope/vim-rails'
 Plug 'fatih/vim-go'
-Plug 'vim-ctrlspace/vim-ctrlspace'
+Plug 'posva/vim-vue'
+Plug 'rhysd/vim-crystal'
+Plug 'vim-syntastic/syntastic'
 call plug#end()
 
 let g:deoplete#enable_at_startup=1
@@ -78,8 +80,8 @@ autocmd CompleteDone * pclose " To close preview window of deoplete aut
 imap <F3>     <Plug>(neosnippet_expand_or_jump)
 smap <F3>    <Plug>(neosnippet_expand_or_jump)
 xmap <F3>    <Plug>(neosnippet_expand_target)
+" space to clean search highlighted
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
-
 "*************MAP*******************************
 " return to visual mode after indent in vm
 vnoremap > >gv
@@ -92,14 +94,20 @@ nnoremap gb :ls<CR>:b<Space>
 nnoremap <C-+> <C-]>
 inoremap <C-s> <ESC>:w<CR>
 
-map <F4> :execute " grep -srnw --binary-files=without-match --exclude-dir=.git . -e " . expand("<cword>") . " " <bar> cwindow<CR>
-let g:ackprg = 'ag --vimgrep'
+"map <F4> :execute " grep -srnw --binary-files=without-match --exclude-dir=.git . -e " . expand("<cword>") . " " <bar> cwindow<CR>
+map <leader>/ :execute "Ack " . expand("<cword>")<CR>
+if executable('ag')
+	let g:ackprg = 'ag --vimgrep'
+end
 
 " terminal map escape
 :tnoremap <Esc> <C-\><C-n>
 
 " open with fuzzy finder
 nnoremap ff :FZF<cr>
+" omnifunc
+inoremap <C-Space> <C-x><C-o>
+inoremap <C-@> <C-Space>
 "*********SPELL*****************
 setlocal spelllang=en_us
 set spell
@@ -118,7 +126,7 @@ nnoremap ,, :e .<CR>
 " copy paste through pbcopy
 map <C-c> :.w !pbcopy<CR><CR>
 map <C-v> :r !pbpaste<CR>
-map <space> :CtrlSpace<CR>
+map ,<space> :CtrlSpace<CR>
 "
 "
 
