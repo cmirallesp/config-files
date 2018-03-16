@@ -2,3 +2,4 @@
 nvim/.netrwhist
 vim/plugged/
 *.log
+tmux/plugins
