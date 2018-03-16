@@ -1,7 +1,7 @@
-" PYTHON
+" python
 " uncomment next line if you use python2
-let g:python_host_prog = '/Users/carles/.pyenv/versions/2.7/bin/python'
-let g:python3_host_prog = '/Users/carles/.pyenv/versions/3.6.2/bin/python'
+let g:python_host_prog = '/users/carles/.pyenv/versions/2.7/bin/python'
+let g:python3_host_prog = '/users/carles/.pyenv/versions/3.6.2/bin/python'
 "set runtimepath+=~/.config/nvim/plugins/deoplete.nvim
 let mapleader=","
 set runtimepath+=~/.vim,~/.vim/after
@@ -85,6 +85,11 @@ xmap <F3>    <Plug>(neosnippet_expand_target)
 " space to clean search highlighted
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 "*************MAP*******************************
+
+"nmap sd zG
+
+" open file browser
+nnoremap ,, :e .<CR>
 " return to visual mode after indent in vm
 vnoremap > >gv
 vnoremap < <gv
@@ -108,8 +113,7 @@ end
 " open with fuzzy finder
 nnoremap ff :FZF<cr>
 " omnifunc
-inoremap <C-Space> <C-x><C-o>
-inoremap <C-@> <C-Space>
+inoremap <C-@> <C-x><C-o>
 "*********SPELL*****************
 setlocal spelllang=en_us
 set spell
@@ -125,10 +129,10 @@ nmap sd zG
 " open file browser
 nnoremap ,, :e .<CR>
 
-" copy paste through pbcopy
-map <C-c> :.w !pbcopy<CR><CR>
-map <C-v> :r !pbpaste<CR>
-map ,<space> :CtrlSpace<CR>
+" copy through pbcopy
+vmap c :.w !pbcopy<CR><CR> " copy visual selection
+" vmap v :r !pbpaste<CR> the paste is not needed super+v works
 "
 "
-
+" avoid start tmuxline since is manually started in .tmux.conf
+let g:airline#extensions#tmuxline#enabled = 0
