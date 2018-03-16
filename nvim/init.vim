@@ -38,6 +38,7 @@ Plug 'tpope/vim-sensible' "tabs, configuration
 "command line
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'edkolev/tmuxline.vim'
 " latex-box (lighter than latex-vim)
 Plug 'LaTeX-Box-Team/LaTeX-Box'
 
@@ -47,6 +48,7 @@ Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 "Plug 'honza/vim-snippets'
 Plug 'tpope/vim-fugitive' "Git plugin
+
 "Plug 'epmatsw/ag.vim' "silver searcher (deprecated)
 Plug 'mileszs/ack.vim' " using ag
 Plug 'scrooloose/nerdcommenter'
@@ -70,7 +72,7 @@ Plug 'tpope/vim-rails'
 Plug 'fatih/vim-go'
 Plug 'posva/vim-vue'
 Plug 'rhysd/vim-crystal'
-Plug 'vim-syntastic/syntastic'
+"Plug 'vim-syntastic/syntastic'
 call plug#end()
 
 let g:deoplete#enable_at_startup=1
