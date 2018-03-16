@@ -153,5 +153,4 @@ alias add='amber database drop'
 alias adm='amber database migrate'
 alias ads='amber database status'
 alias adr='amber database rollback'
-## term require for tmux with truecolor
-export TERM="screen-256color-bce"
+alias tmux='TERM=xterm-256color tmux'
