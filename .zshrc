@@ -144,7 +144,7 @@ export MYVIMRC='.config/nvim/init.vim'
 ## GO
 #export GOPATH=/Volumes/500GB/dev/go
 export GOPATH=/Users/carles/dev/go
-export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin/
 eval "$(rbenv init -)"
 
 ## AMBER
