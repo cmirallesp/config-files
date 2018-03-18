@@ -54,6 +54,7 @@ Plug 'mileszs/ack.vim' " using ag
 Plug 'scrooloose/nerdcommenter'
 Plug 'sbdchd/neoformat' " format files
 Plug 'zchee/deoplete-jedi' " pyton autocompletion (jedi)
+Plug 'zchee/deoplete-go', { 'do': 'make'}
 " js autocompletion (tern)
 " javascript
 "Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
@@ -112,8 +113,6 @@ end
 
 " open with fuzzy finder
 nnoremap ff :FZF<cr>
-" omnifunc
-inoremap <C-@> <C-x><C-o>
 "*********SPELL*****************
 setlocal spelllang=en_us
 set spell
@@ -136,3 +135,6 @@ vmap c :.w !pbcopy<CR><CR> " copy visual selection
 "
 " avoid start tmuxline since is manually started in .tmux.conf
 let g:airline#extensions#tmuxline#enabled = 0
+
+" deoplete-go next line if different from $GOPATH/bin
+" let g:deoplete#sources#go#gocode_binary = '/Users/carles/dev/go/bin/gocode'
